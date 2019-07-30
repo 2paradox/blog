@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+<div class = "container">
+
+<h1>Sign up!</h1>
+
+<form method="POST" action= "{%url 'signup' %}">
+    {% csrf_token %} <!--난수를 발생시키고 여기서 발생한 난수를 바탕으로 post가 엄한녀석인지 맞는 데이터인지 확인(간단한 보안방식)-->
+    Username:
+    <br>
+    <input name ="username" type="text" value="">
+    <br>
+    Password:
+    <br>
+    <input name ="password1" type="password" value="">
+    <br>
+    Confirm Password:
+    <br>
+    <input name="password2" type="password" value="">
+    <br>
+    <br>
+    <input class ="btn btn-primary" type="submit" value="sign up!">
+
+</form>
+</div>
+{% endblock %}
